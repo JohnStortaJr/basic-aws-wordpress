@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
   This file contains details about the variables used as part of this configuration.
   The values for these variables are contained within the secret.tfvars file but
@@ -25,4 +26,17 @@ variable "ssh_local" {
     description = "IP allowed to access ec2 instances"
     type = string
 >>>>>>> 69fa5dd (Add security group and variable)
+=======
+variable "aws_access_source" {
+    default = "127.0.0.1/8"
+    description = "Single IP allowed to access the ec2 instance"
+    type = string
+    sensitive = true
+}
+
+variable "aws_key" {
+    description = "SSL key for accessing the ec2 instance"
+    type = string
+    sensitive = true
+>>>>>>> 03b1cb5 (Initial basicec2lab config)
 }

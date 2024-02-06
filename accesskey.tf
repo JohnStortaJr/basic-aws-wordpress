@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
   Resource blocks are used to create resources in AWS.
   The first parameter is the type of resource to be created. In this case
@@ -13,4 +14,9 @@
 resource "aws_key_pair" "basicec2lab-key01" {
   key_name   = "basicec2lab-key01"
   public_key = var.aws_key #This value is populated within your secret.tfvars file
+=======
+resource "aws_key_pair" "trainer01_keypair01" {
+  key_name   = "terraform-key03"
+  public_key = var.aws_key
+>>>>>>> 03b1cb5 (Initial basicec2lab config)
 }

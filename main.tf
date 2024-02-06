@@ -35,8 +35,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "jsbucket24-webserverlab"
-    key    = "terraform.tfstate.dev"
+    bucket = "js2024-basicec2lab-bucket"
+    key    = "terraform.tfstate.basicec2lab"
     region = "us-east-1"
     profile = "trainer01a"
   }
