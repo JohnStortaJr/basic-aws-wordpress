@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
   This block indicates that this configuration will use AWS.
   It also specifies the region the resources will be deployed to (us-east-1)
@@ -26,4 +27,18 @@ terraform {
   #If you plan to use a local state file, comment out the s3 block above
   #Local is the default backend so it is not necessary to explicitly declare it
   #backend "local" {}
+=======
+provider "aws" {
+  region = "us-east-1"
+  profile = "trainer01a"
+}
+
+terraform {
+  backend "s3" {
+    bucket = "jsbucket24-webserverlab"
+    key    = "terraform.tfstate.dev"
+    region = "us-east-1"
+    profile = "trainer01a"
+  }
+>>>>>>> 2b7c3a7 (Setup main.tf access info)
 }
