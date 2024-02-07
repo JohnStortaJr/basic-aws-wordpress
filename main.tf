@@ -48,7 +48,7 @@ provider "aws" {
 */
 terraform {
   backend "s3" {
-    bucket = "js2024-basicec2lab-bucket"        #replace with the name of your s3 bucket
+    bucket = "js2024-basicec2lab-bucket"        #replace with the name of your s3 bucket (you will NOT be able to write to this bucket)
     key    = "terraform.tfstate.basicec2lab"    #this is the name for the state file object in your s3 bucket (anything you choose)
     region = "us-east-1"
     profile = "trainer01a"
