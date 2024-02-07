@@ -159,6 +159,7 @@ aws_key="PUBLIC_KEY"
 *PUBLIC_KEY* is your public SSH key. The default key is usually located in ~/.ssh/id_rsa.pub. Paste the contents of this file inside the double quotes
 
 Refer to the comments within each .tf file for information about what they contain. It may help to review the files in this order...
+main.tf             Terraform initialization
 variable.tf         Variable definitions 
 main.tf             Terraform and AWS initialization
 security-group.tf   
