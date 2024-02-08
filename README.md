@@ -45,6 +45,7 @@ built when your AWS account is created. Each EC2 instance is built
 with public-facing IPv4 addresses so they can be accessed remotely
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 from your personal IP (and ONLY your personal IP). 
 =======
 from your personal IP (and ONLY your personal IP).  
@@ -52,6 +53,9 @@ from your personal IP (and ONLY your personal IP).
 =======
 from your personal IP (and ONLY your personal IP).
 >>>>>>> d0811fc (Test commmit)
+=======
+from your personal IP (and ONLY your personal IP).  
+>>>>>>> c01295e (Test commmit)
 
 This lab is only for basic testing purposes and
 should NOT be used for any sensitive content.
