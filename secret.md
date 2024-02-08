@@ -2,6 +2,8 @@ A `secret.tfvars` file is needed to hold the configuration details that
 should not be publically visible.
 
 ## Sample entries
+The entries below are needed in order to use this configuration.
+
 CIDR notation for your internet IP. Note that the IP you need is the public IP provided by your ISP, not your local desktop IP
 
 ```
