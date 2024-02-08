@@ -2,6 +2,9 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9550220 (Add cost block)
 ## Cost
 S3 buckets are part of the AWS free tier with limitations on the amount
 of space you consume and the number of PUTs and GETs. Be sure to check
