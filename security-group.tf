@@ -12,7 +12,7 @@ resource "aws_security_group" "basicec2lab-ssh-sg" {
   name        = "basicec2lab-ssh-sg"
   description = "Enable ssh access on port 22"
 
-  #This rule allows incoming traffic to SSH connections from your IP address
+  #This rule allows incoming SSH connections from your IP address
   ingress {
     description      = "SSH Access from single IP"
     from_port        = 22
@@ -21,7 +21,7 @@ resource "aws_security_group" "basicec2lab-ssh-sg" {
     cidr_blocks      = [var.aws_access_source]    #this variable is populated in the secret.tfvars file with your IP address
   }
 
-  #This rule allows SSH connections from other instances on the subnets within the default VPC
+  #This rule allows incoming SSH connections from other instances on the subnets within the default VPC
   ingress {
     description      = "SSH Between Instances"
     from_port        = 22
