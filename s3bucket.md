@@ -12,11 +12,12 @@ the current restrictions before creating the resource.
 - Install the AWS CLI
 - Configure the AWS CLI with a named profile
 
-## Commands
+## Naming
 Replace `BUCKET_NAME` with the actual name you wish to use for your bucket.
 
 **s3 bucket names must be globally unique.**
 
+## Commands
 Create the bucket in `us-east-1`. Adjust region as needed.
 
 ```ShellSession
