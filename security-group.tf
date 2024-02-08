@@ -9,7 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
   access to each instance within the environment. A group is like a firewall
-  around each instance within that security group.
+  around each instance within that security group. 
 */
 
 /*
