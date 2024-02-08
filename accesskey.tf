@@ -11,10 +11,14 @@
 */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 331d451 (Updated Formatting)
 /*
   The name provided on the first line is for use within Terraform
   The key_name provided within the block is the name used within AWS (they do not need to match)
 */
+<<<<<<< HEAD
 resource "aws_key_pair" "basicec2lab-key01" {
   key_name   = "basicec2lab-key01"
   public_key = var.aws_key #This value is populated within your secret.tfvars file
@@ -26,6 +30,8 @@ resource "aws_key_pair" "trainer01_keypair01" {
 =======
 #The name provided on the first line is for Terraform
 #The key_name provided within the block is the name within AWS (they do not need to match)
+=======
+>>>>>>> 331d451 (Updated Formatting)
 resource "aws_key_pair" "basicec2lab-key01" {
   key_name   = "basicec2lab-key01"
 <<<<<<< HEAD
