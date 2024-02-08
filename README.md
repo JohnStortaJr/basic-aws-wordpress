@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <img src="Basic%20EC2%20Lab%20Network%20Diagram.png" alt="Basic EC2 Lab Network Diagram" width="400">
 
 This repository contains the files necessary to build out
@@ -202,6 +203,8 @@ This repository contains the files necessary to build out a (very) basic EC2 lab
 >>>>>>> b70eac9 (Add comments to all files)
 =======
 **View this file as code**
+=======
+>>>>>>> 73586ad (Update readme formatting)
 This repository contains the files necessary to build out
 a (very) basic EC2 lab environment using Terraform.
 >>>>>>> 18fcfad (Update readme comment)
@@ -234,10 +237,6 @@ Be sure to check the current free tier limitations on these
 resources before building this environment.
 
 # Prerequisites
-This repository is focused on the deployment of infrastructure, 
-not the setup of your environment. 
-Ensure the following items are completed before 
-attempting to implement this configuration.
     -> Create an AWS account (free tier will work fine)
     -> Create an IAM user for your AWS account with the AdministratorAccess policy
     -> Install Terraform on your local machine
@@ -245,6 +244,10 @@ attempting to implement this configuration.
     -> Install the AWS CLI
     -> Configure the AWS CLI with a named profile
     -> Create an S3 bucket for the Terraform state file (optional)
+This repository is focused on the deployment of infrastructure, 
+not the setup of your environment. 
+Ensure the following items are completed before 
+attempting to implement this configuration.
 
 # secret.tfvars
 There are a number of values needed during the deployment which 
