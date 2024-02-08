@@ -15,7 +15,7 @@
 =======
 >>>>>>> 331d451 (Updated Formatting)
 /*
-  The name provided on the first line is for use within Terraform 
+  The name provided on the first line is for use within Terraform
   The key_name provided within the block is the name used within AWS (they do not need to match)
 */
 <<<<<<< HEAD

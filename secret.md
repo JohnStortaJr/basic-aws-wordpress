@@ -4,7 +4,7 @@ A `secret.tfvars` file is needed to hold the configuration details that
 should not be publically visible.
 
 ## Sample entries
-The entries below are needed in order to use this configuration. 
+The entries below are needed in order to use this configuration.
 
 <<<<<<< HEAD
 =======

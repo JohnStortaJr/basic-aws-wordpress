@@ -47,6 +47,7 @@ with public-facing IPv4 addresses so they can be accessed remotely
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 from your personal IP (and ONLY your personal IP). 
 =======
 from your personal IP (and ONLY your personal IP).  
@@ -60,6 +61,9 @@ from your personal IP (and ONLY your personal IP).
 =======
 from your personal IP (and ONLY your personal IP).
 >>>>>>> 7aecef0 (Test commmit)
+=======
+from your personal IP (and ONLY your personal IP). 
+>>>>>>> 2bb0ae8 (Recommit all code after rebasing)
 
 This lab is only for basic testing purposes and
 should NOT be used for any sensitive content.
