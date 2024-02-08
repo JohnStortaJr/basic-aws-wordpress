@@ -1,5 +1,5 @@
 # Basic EC2 Lab
-![Basic EC2 Lab Network Diagram](https://github.com/JohnStortaJr/basicec2lab/blob/main/Basic%20EC2%20Lab%20Network%20Diagram.png)
+![Basic EC2 Lab Network Diagram](Basic%20EC2%20Lab%20Network%20Diagram.png)
 
 This repository contains the files necessary to build out
 a (very) basic EC2 lab environment using Terraform.
@@ -49,7 +49,7 @@ There are a number of values needed during the deployment which
 should not be shared or visible. These are things like access keys, 
 SSH keys, and IP addresses. 
 You will need a `secret.tfvars` file that contains your secrets.
-Refer to the [secret.sample](https://github.com/JohnStortaJr/basicec2lab/blob/main/secret.sample) file for more information on this requirement.
+Refer to the [secret.sample](secret.sample) file for more information on this requirement.
 
 ## tf files
 Terraform uses .tf files for the configuration. 
