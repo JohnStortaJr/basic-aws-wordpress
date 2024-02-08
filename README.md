@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <img src="Basic%20EC2%20Lab%20Network%20Diagram.png" alt="Basic EC2 Lab Network Diagram" width="400">
 =======
 ![Basic EC2 Lab Network Diagram](Basic%20EC2%20Lab%20Network%20Diagram.png)
@@ -15,6 +16,10 @@
 =======
 ![Basic EC2 Lab Network Diagram](Basic%20EC2%20Lab%20Network%20Diagram.png|width=200)
 >>>>>>> 4d8da9f (Update image size)
+=======
+[Basic EC2 Lab Network Diagram](Basic%20EC2%20Lab%20Network%20Diagram.png|width=200)
+<img src="Basic%20EC2%20Lab%20Network%20Diagram.png" width="200">
+>>>>>>> d7d3ed3 (Update image size)
 
 =======
 ![Basic EC2 Lab Network Diagram](https://github.com/JohnStortaJr/basicec2lab/blob/main/Basic%20EC2%20Lab%20Network%20Diagram.png)
