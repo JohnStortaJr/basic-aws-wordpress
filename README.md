@@ -10,6 +10,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9c2db87 (Clean merge tags)
 <img src="Basic%20EC2%20Lab%20Network%20Diagram.png" alt="Basic EC2 Lab Network Diagram" width="400">
 =======
 ![Basic EC2 Lab Network Diagram](Basic%20EC2%20Lab%20Network%20Diagram.png)
@@ -176,7 +179,6 @@ ssh -i "~/.ssh/awskey" ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com
 Introduction to using Terraform to build a set of EC2 instances using default infrastructure
 =======
 This repository contains the files necessary to build out a (very) basic EC2 lab environment using Terraform.
->>>>>>> b70eac9 (Add comments to all files)
 
 This environment takes advantage of the default infrastructure
 you get with every AWS account and adds four internet-accessible
@@ -314,11 +316,15 @@ main.tf             Terraform initialization
 variable.tf         Variable definitions 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e5fabc9 (Update README)
+=======
+>>>>>>> 9c2db87 (Clean merge tags)
 main.tf             Terraform and AWS initialization
 security-group.tf   
 access-key.tf
 instances.tf
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> e5fabc9 (Update README)
 =======
@@ -409,3 +415,9 @@ ssh -i PRIVATE_KEY_FILE ubuntu@PUBLIC_DNS
 ssh -i "~/.ssh/awskey" ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com
 ```
 >>>>>>> 4fa26c2 (Updated Formatting)
+=======
+=======
+security-group.tf   Security group to allow access to the EC2 instances
+access-key.tf       SSH key for logging into the EC2 instances
+instances.tf        EC2 configurations
+>>>>>>> 9c2db87 (Clean merge tags)
