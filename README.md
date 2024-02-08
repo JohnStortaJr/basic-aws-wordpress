@@ -1,4 +1,5 @@
 # Basic EC2 Lab
+![Basic EC2 Lab Network Diagram](https://github.com/JohnStortaJr/basicec2lab/blob/main/Basic%20EC2%20Lab%20Network%20Diagram.png)
 This repository contains the files necessary to build out
 a (very) basic EC2 lab environment using Terraform.
 
@@ -16,13 +17,13 @@ This lab is only for basic testing purposes and
 should NOT be used for any sensitive content.
 
 ## Resources used…
-> VPC (*AWS default*)
-> Subnets (*AWS default*)
-> Internet Gateway (*AWS default*)
-> Route Tables (*AWS default*)
-> Security Group
-> Key Pair
-> EC2
+- VPC (*AWS default*)
+- Subnets (*AWS default*)
+- Internet Gateway (*AWS default*)
+- Route Tables (*AWS default*)
+- Security Group
+- Key Pair
+- EC2
 
 ## Cost
 All resources used in this environment are part of the AWS free tier. 
@@ -34,13 +35,13 @@ This repository is focused on the deployment of infrastructure,
 not the setup of your environment. 
 Ensure the following items are completed before 
 attempting to implement this configuration.
-> Create an AWS account (free tier will work fine)
-> Create an IAM user for your AWS account with the AdministratorAccess policy
-> Install Terraform on your local machine
-> Create an AWS Access Key and Secret Key (be sure to save these keys)
-> Install the AWS CLI
-> Configure the AWS CLI with a named profile
-> Create an S3 bucket for the Terraform state file (optional)
+- Create an AWS account (free tier will work fine)
+- Create an IAM user for your AWS account with the AdministratorAccess policy
+- Install Terraform on your local machine
+- Create an AWS Access Key and Secret Key (be sure to save these keys)
+- Install the AWS CLI
+- Configure the AWS CLI with a named profile
+- Create an S3 bucket for the Terraform state file (optional)
 
 ## secret.tfvars
 There are a number of values needed during the deployment which 
@@ -56,9 +57,9 @@ Terraform will view all files together as though they were one big file.
 Refer to the comments within each .tf file for specific information about what it contains.
 
 It may be helpful to review the files in this order.
-> main.tf             Terraform initialization
-> variable.tf         Variable definitions 
-> security-group.tf   Security group to allow access to the EC2 instances
-> access-key.tf       SSH key for logging into the EC2 instances
-> instances.tf        EC2 configurations
+- main.tf             Terraform initialization
+- variable.tf         Variable definitions 
+- security-group.tf   Security group to allow access to the EC2 instances
+- access-key.tf       SSH key for logging into the EC2 instances
+- instances.tf        EC2 configurations
 
