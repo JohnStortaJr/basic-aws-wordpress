@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 A `secret.tfvars` file is needed to hold the configuration details that 
 should not be publically visible.
 
@@ -7,6 +8,9 @@ The entries below are needed in order to use this configuration.
 
 =======
 A secret.tfvars file is needed to hold the configuration details that 
+=======
+A `secret.tfvars` file is needed to hold the configuration details that 
+>>>>>>> 80a657e (Update to markdown format)
 should not be publically visible.
 
 ## Sample entries
