@@ -73,39 +73,48 @@ resource "aws_instance" "basicec2labaz2" {
 resource "aws_instance" "basicec2lab" {
 =======
 resource "aws_instance" "basicec2labaz1" {
+<<<<<<< HEAD
 >>>>>>> 16b9f78 (Build in multiple AZs)
     #The security group and key pair must be created before the instances are built
     depends_on = [
         aws_key_pair.basicec2lab-key01,
         aws_security_group.basicec2lab-ssh-sg
     ]
+=======
+  #The security group and key pair must be created before the instances are built
+  depends_on = [
+    aws_key_pair.basicec2lab-key01,
+    aws_security_group.basicec2lab-ssh-sg
+  ]
+>>>>>>> 4fa26c2 (Updated Formatting)
 
-    #How many instances should be created with this configuration
-    count = 2
-    ami                     = "ami-0c7217cdde317cfec"                    #The AMI for this image (We are using Ubuntu22.04 LTS x86_64)
-    instance_type           = "t2.micro"                                 #The size of the instance (t2.micro is free tier eligible)
-    availability_zone       = "us-east-1a"
-    key_name                = "basicec2lab-key01"                        #The key pair that will allow SSH access to this instance
-    vpc_security_group_ids  = [aws_security_group.basicec2lab-ssh-sg.id] #The security group that will allow SSD access to this instance from your IP
-    
-    /*
+  #How many instances should be created with this configuration
+  count                  = 2
+  ami                    = "ami-0c7217cdde317cfec" #The AMI for this image (We are using Ubuntu22.04 LTS x86_64)
+  instance_type          = "t2.micro"              #The size of the instance (t2.micro is free tier eligible)
+  availability_zone      = "us-east-1a"
+  key_name               = "basicec2lab-key01"                        #The key pair that will allow SSH access to this instance
+  vpc_security_group_ids = [aws_security_group.basicec2lab-ssh-sg.id] #The security group that will allow SSD access to this instance from your IP
+
+  /*
         This is the AWS name for each instance created
         We are creating multiple instances as indicated by the count property
         The count.index starts at 0 and will increment automatically for each instance (this is a built-in Terraform variable)
         This name is what we will see on the AWS console for the instance, but it is not the hostname of the instance
     */
-    tags = {
-        Name = "Basic EC2 Lab Server az120${count.index}"
-    }
+  tags = {
+    Name = "Basic EC2 Lab Server az120${count.index}"
+  }
 }
 
 #This block is the same as above, but deploys the instances in availability zone 2
 resource "aws_instance" "basicec2labaz2" {
-    depends_on = [
-        aws_key_pair.basicec2lab-key01,
-        aws_security_group.basicec2lab-ssh-sg
-    ]
+  depends_on = [
+    aws_key_pair.basicec2lab-key01,
+    aws_security_group.basicec2lab-ssh-sg
+  ]
 
+<<<<<<< HEAD
     count = 2
     ami                     = "ami-0c7217cdde317cfec"
     instance_type           = "t2.micro"
@@ -125,4 +134,16 @@ resource "aws_instance" "basicec2labaz2" {
 >>>>>>> 03b1cb5 (Initial basicec2lab config)
 =======
 >>>>>>> b70eac9 (Add comments to all files)
+=======
+  count                  = 2
+  ami                    = "ami-0c7217cdde317cfec"
+  instance_type          = "t2.micro"
+  availability_zone      = "us-east-1b"
+  key_name               = "basicec2lab-key01"
+  vpc_security_group_ids = [aws_security_group.basicec2lab-ssh-sg.id]
+
+  tags = {
+    Name = "Basic EC2 Lab Server az220${count.index}"
+  }
+>>>>>>> 4fa26c2 (Updated Formatting)
 }

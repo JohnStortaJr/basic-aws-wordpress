@@ -35,8 +35,8 @@ terraform {
 =======
 >>>>>>> b70eac9 (Add comments to all files)
 provider "aws" {
-  region = "us-east-1"      #modify this to the region your choice
-  profile = "trainer01a"    #modify to an IAM user belonging to the AdministratorAccess policy
+  region  = "us-east-1"  #modify this to the region your choice
+  profile = "trainer01a" #modify to an IAM user belonging to the AdministratorAccess policy
 }
 
 
@@ -48,9 +48,9 @@ provider "aws" {
 */
 terraform {
   backend "s3" {
-    bucket = "js2024-basicec2lab-bucket"        #replace with the name of your s3 bucket (you will NOT be able to write to this bucket)
-    key    = "terraform.tfstate.basicec2lab"    #this is the name for the state file object in your s3 bucket (anything you choose)
-    region = "us-east-1"
+    bucket  = "js2024-basicec2lab-bucket"     #replace with the name of your s3 bucket (you will NOT be able to write to this bucket)
+    key     = "terraform.tfstate.basicec2lab" #this is the name for the state file object in your s3 bucket (anything you choose)
+    region  = "us-east-1"
     profile = "trainer01a"
   }
 <<<<<<< HEAD

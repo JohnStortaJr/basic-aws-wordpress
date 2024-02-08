@@ -40,13 +40,14 @@ variable "ssh_local" {
 
 >>>>>>> b70eac9 (Add comments to all files)
 variable "aws_access_source" {
-    default = "127.0.0.1/8"
-    description = "Single IP allowed to access the ec2 instance"
-    type = string
-    sensitive = true        #hides the details from the deploy output and log files
+  default     = "127.0.0.1/8"
+  description = "Single IP allowed to access the ec2 instance"
+  type        = string
+  sensitive   = true #hides the details from the deploy output and log files
 }
 
 variable "aws_key" {
+<<<<<<< HEAD
     description = "SSL key for accessing the ec2 instance"
     type = string
 <<<<<<< HEAD
@@ -55,4 +56,9 @@ variable "aws_key" {
 =======
     sensitive = true        #hides the details from the deploy output and log files
 >>>>>>> b70eac9 (Add comments to all files)
+=======
+  description = "SSL key for accessing the ec2 instance"
+  type        = string
+  sensitive   = true #hides the details from the deploy output and log files
+>>>>>>> 4fa26c2 (Updated Formatting)
 }

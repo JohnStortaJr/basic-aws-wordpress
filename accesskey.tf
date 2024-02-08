@@ -28,6 +28,10 @@ resource "aws_key_pair" "trainer01_keypair01" {
 #The key_name provided within the block is the name within AWS (they do not need to match)
 resource "aws_key_pair" "basicec2lab-key01" {
   key_name   = "basicec2lab-key01"
+<<<<<<< HEAD
   public_key = var.aws_key      #This value is populated within your secret.tfvars file
 >>>>>>> b70eac9 (Add comments to all files)
+=======
+  public_key = var.aws_key #This value is populated within your secret.tfvars file
+>>>>>>> 4fa26c2 (Updated Formatting)
 }

@@ -67,32 +67,36 @@ resource "aws_security_group" "basicec2lab-ssh-sg" {
 
   #This rule allows incoming SSH connections from your IP address
   ingress {
-    description      = "SSH Access from single IP"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = [var.aws_access_source]    #this variable is populated in the secret.tfvars file with your IP address
+    description = "SSH Access from single IP"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [var.aws_access_source] #this variable is populated in the secret.tfvars file with your IP address
   }
 
   #This rule allows incoming SSH connections from other instances on the subnets within the default VPC
   ingress {
-    description      = "SSH Between Instances"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = ["172.31.0.0/20"]    #This is the CIDR for the subnets automatically created within the default VPC
+    description = "SSH Between Instances"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["172.31.0.0/20"] #This is the CIDR for the subnets automatically created within the default VPC
   }
 
   #This rule allows ALL traffic out from the instance
   egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = -1
-    cidr_blocks      = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = -1
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
+<<<<<<< HEAD
   tags   = {
 >>>>>>> 69fa5dd (Add security group and variable)
+=======
+  tags = {
+>>>>>>> 4fa26c2 (Updated Formatting)
     Name = "SSH Security Group"
   }
 }
