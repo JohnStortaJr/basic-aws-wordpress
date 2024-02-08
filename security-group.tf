@@ -3,7 +3,7 @@
   The first parameter is the type of resource to be created. In this case
   we are creating an aws_security_group. This group is what will control
   access to each instance within the environment. A group is like a firewall
-  around each instance within that security group. 
+  around each instance within that security group.
 */
 
 /*

@@ -1,5 +1,5 @@
 /*
-  Resource blocks are used to create resources in AWS.
+  Resource blocks are used to create resources in AWS. 
   The first parameter is the type of resource to be created. In this case
   we are creating several aws_instances (EC2). Be sure to look up the default user
   for whatever image you use. For our image, the default user is ubuntu.
