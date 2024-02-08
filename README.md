@@ -257,11 +257,18 @@ You will need a secret.tfvars file that contains your secrets.
 Refer to the secret.sample file for more information on this requirement.
 
 # tf files
+    -> main.tf             Terraform initialization
+    -> variable.tf         Variable definitions 
+    -> security-group.tf   Security group to allow access to the EC2 instances
+    -> access-key.tf       SSH key for logging into the EC2 instances
+    -> instances.tf        EC2 configurations
+
 Terraform uses .tf files for the configuration. 
 You can split your configuration up into as many, or as few, files as you desire. 
 Terraform will view all files together as though they were one big file. 
 Refer to the comments within each .tf file for specific information about what it contains.
 
+<<<<<<< HEAD
 It may help to review the files in this order...
 main.tf             Terraform initialization
 variable.tf         Variable definitions 
@@ -290,3 +297,6 @@ access-key.tf       SSH key for logging into the EC2 instances
 >>>>>>> b70eac9 (Add comments to all files)
 instances.tf        EC2 configurations
 >>>>>>> 7aa70a1 (Update tf file descriptions in README)
+=======
+It may be helpful to review the files in the above order.
+>>>>>>> 8bc06fc (Update readme tf file formatting)
