@@ -1,5 +1,6 @@
 # Basic EC2 Lab
-![Basic EC2 Lab Network Diagram](Basic%20EC2%20Lab%20Network%20Diagram.png|width=200)
+[Basic EC2 Lab Network Diagram](Basic%20EC2%20Lab%20Network%20Diagram.png|width=200)
+<img src="Basic%20EC2%20Lab%20Network%20Diagram.png" width="200">
 
 This repository contains the files necessary to build out
 a (very) basic EC2 lab environment using Terraform.
