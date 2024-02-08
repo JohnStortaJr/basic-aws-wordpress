@@ -1,5 +1,10 @@
 # Create an S3 bucket from the AWS CLI
 
+## Cost
+S3 buckets are part of the AWS free tier with limitations on the amount
+of space you consume and the number of PUTs and GETs. Be sure to check
+the current restrictions before creating the resource.
+
 ## Prerequisites
 - Create an AWS account (*free tier will work fine*)
 - Create an IAM user for your AWS account with the `AdministratorAccess` policy
