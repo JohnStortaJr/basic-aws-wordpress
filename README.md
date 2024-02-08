@@ -1,5 +1,6 @@
 # Basic EC2 Lab
 ![Basic EC2 Lab Network Diagram](https://github.com/JohnStortaJr/basicec2lab/blob/main/Basic%20EC2%20Lab%20Network%20Diagram.png)
+
 This repository contains the files necessary to build out
 a (very) basic EC2 lab environment using Terraform.
 
@@ -57,9 +58,9 @@ Terraform will view all files together as though they were one big file.
 Refer to the comments within each .tf file for specific information about what it contains.
 
 It may be helpful to review the files in this order.
-- main.tf             Terraform initialization
-- variable.tf         Variable definitions 
-- security-group.tf   Security group to allow access to the EC2 instances
-- access-key.tf       SSH key for logging into the EC2 instances
-- instances.tf        EC2 configurations
+- `main.tf` Terraform initialization
+- `variable.tf` Variable definitions 
+- `security-group.tf` Security group to allow access to the EC2 instances
+- `access-key.tf` SSH key for logging into the EC2 instances
+- `instances.tf` EC2 configurations
 
