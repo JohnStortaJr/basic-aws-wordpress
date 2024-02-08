@@ -25,6 +25,7 @@ the current restrictions before creating the resource.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Naming
 - Replace `BUCKET_NAME` in the comamnds with the actual name you wish to use for your bucket
 - **s3 bucket names must be globally unique**
@@ -46,10 +47,14 @@ aws s3api put-bucket-versioning --bucket BUCKET_NAME --versioning-configuration 
 =======
 ## Commands
 >>>>>>> 5941c33 (Reformat with markdown)
+=======
+## Naming
+>>>>>>> 469cb11 (Add cost block)
 Replace `BUCKET_NAME` with the actual name you wish to use for your bucket.
 
 **s3 bucket names must be globally unique.**
 
+## Commands
 Create the bucket in `us-east-1`. Adjust region as needed.
 
 ```ShellSession
