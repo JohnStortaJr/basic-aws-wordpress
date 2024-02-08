@@ -5,23 +5,24 @@
   for whatever image you use. For our image, the default user is ubuntu.
 */
 
-#The name provided on the first line is for Terraform
-#The Tag Name provided within the block is the name you will see within AWS
-#Note that the names given are NOT the hostnames of the instances
+/*
+  The name provided on the first line is for use within Terraform
+  The Tage Name provided within the block is the name used within AWS (they do not need to match)
+  Note that the names provided are NOT the hostnames of the instances
+*/
 resource "aws_instance" "basicec2labaz1" {
-  #The security group and key pair must be created before the instances are built
+  # The key pair and security group must be created before the instances are built
   depends_on = [
     aws_key_pair.basicec2lab-key01,
     aws_security_group.basicec2lab-ssh-sg
   ]
 
-  #How many instances should be created with this configuration
-  count                  = 2
-  ami                    = "ami-0c7217cdde317cfec" #The AMI for this image (We are using Ubuntu22.04 LTS x86_64)
-  instance_type          = "t2.micro"              #The size of the instance (t2.micro is free tier eligible)
-  availability_zone      = "us-east-1a"
-  key_name               = "basicec2lab-key01"                        #The key pair that will allow SSH access to this instance
-  vpc_security_group_ids = [aws_security_group.basicec2lab-ssh-sg.id] #The security group that will allow SSD access to this instance from your IP
+  count                  = 2                                          # How many instances should be created with this configuration
+  ami                    = "ami-0c7217cdde317cfec"                    # The AMI for this image (We are using Ubuntu22.04 LTS x86_64)
+  instance_type          = "t2.micro"                                 # The size of the instance (t2.micro is free tier eligible)
+  availability_zone      = "us-east-1a"                               # The Availability Zone where this instance should be built
+  vpc_security_group_ids = [aws_security_group.basicec2lab-ssh-sg.id] # The security group that will allow SSH access to this instance from your IP
+  key_name               = "basicec2lab-key01"                        # The key pair that will allow SSH authentication to this instance
 
   /*
         This is the AWS name for each instance created
@@ -34,7 +35,9 @@ resource "aws_instance" "basicec2labaz1" {
   }
 }
 
-#This block is the same as above, but deploys the instances in availability zone 2
+/*
+  This block is the same as above, but deploys the instances in availability zone 2
+*/
 resource "aws_instance" "basicec2labaz2" {
   depends_on = [
     aws_key_pair.basicec2lab-key01,
