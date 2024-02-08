@@ -8,14 +8,14 @@
 */
 
 variable "aws_access_source" {
-    default = "127.0.0.1/8"
-    description = "Single IP allowed to access the ec2 instance"
-    type = string
-    sensitive = true        #hides the details from the deploy output and log files
+  default     = "127.0.0.1/8"
+  description = "Single IP allowed to access the ec2 instance"
+  type        = string
+  sensitive   = true #hides the details from the deploy output and log files
 }
 
 variable "aws_key" {
-    description = "SSL key for accessing the ec2 instance"
-    type = string
-    sensitive = true        #hides the details from the deploy output and log files
+  description = "SSL key for accessing the ec2 instance"
+  type        = string
+  sensitive   = true #hides the details from the deploy output and log files
 }

@@ -64,3 +64,60 @@ It may be helpful to review the files in this order.
 - `access-key.tf` SSH key for logging into the EC2 instances
 - `instances.tf` EC2 configurations
 
+## Deployment
+Once all the prerequisites are completed and you have setup your `secret.tfvars` file, 
+use the following commands to check and deploy the configuration.
+
+Initialize Terraform
+```
+terraform init
+```
+
+This will reformat your code to match Terraform standards. This code is already 
+written to those standards, but you can run the command anyway to see the output.
+```
+terraform fmt
+```
+
+Validate that the configuration is good. This command checks the syntax, but does
+not check that the configuration is valid.
+```
+terraform validate
+```
+
+Compare the desired configuration with the current active configuration and
+report back what changes will be made to bring the active configuration in line
+with what is desired. This command reports what will be done, but takes no action.
+```
+terraform plan -var-file="secret.tfvars'
+```
+
+Execute the plan
+```
+terraform apply -var-file="secret.tfvars"
+```
+
+The configuration will take several minutes for all the resources to be created and
+for the EC2 instances to complete their checks. You can monitor the status in the 
+AWS Management Console.
+
+## Access
+Once the EC2 instances show that they are Running and have passed the checks, you
+can access them from your local system using OpenSSH. 
+
+The commands provided here are samples. Your DNS names will be different. You can get 
+the `PUBLIC_DNS` for each instance from the AWS Management Console.
+
+The default username for the AMI that we used is `ubuntu`.
+
+If you used the default ssh key as your aws_key, then you should be able to use this command.
+```
+ssh ubuntu@PUBLIC_DNS
+ssh ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com
+```
+
+If you created a different ssh key, then you will need to specify it on the command line.
+```
+ssh -i PRIVATE_KEY_FILE ubuntu@PUBLIC_DNS
+ssh -i "~/.ssh/awskey" ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com
+```
