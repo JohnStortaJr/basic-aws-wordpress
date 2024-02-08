@@ -7,8 +7,8 @@
 
 /*
   The name provided on the first line is for use within Terraform
-  The Tage Name provided within the block is the name used within AWS (they do not need to match)
-  Note that the names provided are NOT the hostnames of the instances
+  The Tag Name provided within the block is the name used within AWS (they do not need to match)
+  Note that neither of the names provided are NOT the hostnames of the instances. AWS will create hostnames.
 */
 resource "aws_instance" "basicec2labaz1" {
   # The key pair and security group must be created before the instances are built
