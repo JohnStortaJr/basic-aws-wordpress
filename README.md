@@ -12,7 +12,7 @@ be your first step into the world of using AWS with Terraform.
 The default VPC, subnets, and internet gateway are automatically
 built when your AWS account is created. Each EC2 instance is built
 with public-facing IPv4 addresses so they can be accessed remotely
-from your personal IP (and ONLY your personal IP).
+from your personal IP (and ONLY your personal IP).  
 
 This lab is only for basic testing purposes and
 should NOT be used for any sensitive content.
