@@ -18,7 +18,7 @@ resource "aws_instance" "basicec2labaz1" {
   ]
 
   count                  = 2                                          # How many instances should be created with this configuration
-  ami                    = "ami-0c7217cdde317cfec"                    # The AMI for this image (We are using Ubuntu22.04 LTS x86_64)
+  ami                    = "ami-0c7217cdde317cfec"                    # The AMI for this image (We are using Ubuntu22.04 LTS x86_64) 
   instance_type          = "t2.micro"                                 # The size of the instance (t2.micro is free tier eligible)
   availability_zone      = "us-east-1a"                               # The Availability Zone where this instance should be built
   vpc_security_group_ids = [aws_security_group.basicec2lab-ssh-sg.id] # The security group that will allow SSH access to this instance from your IP

@@ -3,7 +3,7 @@
 ## Cost
 S3 buckets are part of the AWS free tier with limitations on the amount
 of space you consume and the number of PUTs and GETs. Be sure to check
-the current restrictions before creating the resource.
+the current restrictions before creating the resource. 
 
 ## Prerequisites
 - Create an AWS account (*free tier will work fine*)

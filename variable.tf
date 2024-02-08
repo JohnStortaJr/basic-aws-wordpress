@@ -1,7 +1,7 @@
 /*
   This file contains details about the variables used as part of this configuration.
   The values for these variables are contained within the secret.tfvars file but
-  there are additional details specified here.
+  there are additional details specified here. 
   Note the sensitive property. Under normal circumstances, Terraform will display all
   the values for the configuration when you run plan and deploy steps. The sensitive
   property on a variable tells it to hide its value.
