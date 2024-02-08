@@ -13,7 +13,7 @@ provider "aws" {
   This block defines where the state file for Terraform will be stored.
   The state file is a critical part of Terraform as it contains a complete
   record of the configuration. 
-  Refer to the s3bucket.txt file for details on creating an s3 bucket from the AWS CLI
+  Refer to the s3bucket.md file for details on creating an s3 bucket from the AWS CLI
 */
 terraform {
   backend "s3" {
