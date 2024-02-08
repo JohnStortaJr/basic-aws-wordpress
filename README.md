@@ -191,25 +191,25 @@ not the setup of your environment.
 Ensure the following items are completed before 
 attempting to implement this configuration.
 - Create an AWS account (free tier will work fine)
-- Create an IAM user for your AWS account with the AdministratorAccess policy
+- Create an IAM user for your AWS account with the `AdministratorAccess` policy
 - Install Terraform on your local machine
-- Create an AWS Access Key and Secret Key (be sure to save these keys)
+- Create an AWS Access Key and Secret Key (*be sure to save these keys*)
 - Install the AWS CLI
 - Configure the AWS CLI with a named profile
-- Create an S3 bucket for the Terraform state file (optional)
+- Create an S3 bucket for the Terraform state file (*optional*)
 
 ## secret.tfvars
 There are a number of values needed during the deployment which 
 should not be shared or visible. These are things like access keys, 
 SSH keys, and IP addresses. 
 You will need a `secret.tfvars` file that contains your secrets.
-Refer to the [secret.sample](secret.sample) file for more information on this requirement.
+Refer to the [secret.md](secret.md) file for more information on this requirement.
 
 ## tf files
-Terraform uses .tf files for the configuration. 
+Terraform uses `.tf` files for the configuration. 
 You can split your configuration up into as many, or as few, files as you desire. 
 Terraform will view all files together as though they were one big file. 
-Refer to the comments within each .tf file for specific information about what it contains.
+Refer to the comments within each `.tf` file for specific information about what it contains.
 
 <<<<<<< HEAD
 It may help to review the files in this order...
