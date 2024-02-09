@@ -174,6 +174,7 @@ If you created a different ssh key, then you will need to specify it on the comm
 ```
 ssh -i PRIVATE_KEY_FILE ubuntu@PUBLIC_DNS
 ssh -i "~/.ssh/awskey" ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com
+<<<<<<< HEAD
 ```
 =======
 Introduction to using Terraform to build a set of EC2 instances using default infrastructure
@@ -421,3 +422,6 @@ security-group.tf   Security group to allow access to the EC2 instances
 access-key.tf       SSH key for logging into the EC2 instances
 instances.tf        EC2 configurations
 >>>>>>> 9c2db87 (Clean merge tags)
+=======
+```
+>>>>>>> 5a154dd (Cleanup after rebase)
