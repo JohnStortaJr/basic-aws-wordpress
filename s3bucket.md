@@ -6,11 +6,7 @@ of space you consume and the number of PUTs and GETs. Be sure to check
 the current restrictions before creating the resource. 
 
 ## Prerequisites
-- Create an AWS account (*free tier will work fine*)
-- Create an IAM user for your AWS account with the `AdministratorAccess` policy
-- Create an AWS Access Key and Secret Key (*be sure to save these keys*)
-- Install the AWS CLI
-- Configure the AWS CLI with a named profile
+Be sure that the prerequisites specified in the [README.md](README.md) file are completed before proceeding with the steps listed here.
 
 ## Naming
 - Replace `BUCKET_NAME` in the comamnds with the actual name you wish to use for your bucket
