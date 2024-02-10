@@ -41,7 +41,7 @@ attempting to implement this configuration.
 - [Install Terraform on your local machine](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - Create an AWS Access Key and Secret Key (*be sure to save these keys*)
-- Configure the AWS CLI with a named profile
+- [Configure the AWS CLI with a named profile](https://docs.aws.amazon.com/cli/latest/reference/configure/)
 - Create an S3 bucket for the Terraform state file (*optional*)
 
 ## secret.tfvars
