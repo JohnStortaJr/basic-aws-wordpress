@@ -1,5 +1,8 @@
 A `secret.tfvars` file is needed to hold the configuration details that 
-should not be publically visible. 
+should not be publically visible. Note that the file does not need to
+be called `secret.tfvars`, but should have an extension of `.tfvars`
+so that it is recognized by the `.gitignore` file and not pushed to 
+the main branch.
 
 ## Sample entries
 The entries below are needed in order to use this configuration.
