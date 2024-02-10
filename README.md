@@ -40,13 +40,13 @@ attempting to implement this configuration.
 - [Create an IAM user for your AWS account with the `AdministratorAccess` policy](https://johnstortajr.com/2023/10/08/create-aws-iam-user/)
 - [Install Terraform on your local machine](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-- Create an AWS Access Key and Secret Key (*be sure to save these keys*)
+- [Create an AWS Access Key and Secret Key](https://johnstortajr.com/2024/02/10/create-aws-access-key/) (*be sure to save these keys*)
 - [Configure the AWS CLI with a named profile](https://docs.aws.amazon.com/cli/latest/reference/configure/)
 - [Create an S3 bucket for the Terraform state file](s3bucket.md) (*optional*)
 
 ## secret.tfvars
 There are a number of values needed during the deployment which 
-should not be shared or visible. These are things like access keys, 
+should not be shared or visible. These include things like access keys, 
 SSH keys, and IP addresses. 
 You will need a `secret.tfvars` file that contains your secrets.
 Refer to the [secret.md](secret.md) file for more information on this requirement.
