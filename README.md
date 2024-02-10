@@ -36,8 +36,8 @@ This repository is focused on the deployment of infrastructure,
 not the setup of your environment. 
 Ensure the following items are completed before 
 attempting to implement this configuration.
-- Create an AWS account (free tier will work fine)
-- Create an IAM user for your AWS account with the `AdministratorAccess` policy
+- [Create an AWS account](https://johnstortajr.com/2023/10/08/create-aws-free-tier/)
+- [Create an IAM user for your AWS account with the `AdministratorAccess` policy](https://johnstortajr.com/2023/10/08/create-aws-iam-user/)
 - Install Terraform on your local machine
 - Create an AWS Access Key and Secret Key (*be sure to save these keys*)
 - Install the AWS CLI
