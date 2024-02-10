@@ -38,9 +38,9 @@ Ensure the following items are completed before
 attempting to implement this configuration.
 - [Create an AWS account](https://johnstortajr.com/2023/10/08/create-aws-free-tier/)
 - [Create an IAM user for your AWS account with the `AdministratorAccess` policy](https://johnstortajr.com/2023/10/08/create-aws-iam-user/)
-- Install Terraform on your local machine
+- [Install Terraform on your local machine](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+- [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - Create an AWS Access Key and Secret Key (*be sure to save these keys*)
-- Install the AWS CLI
 - Configure the AWS CLI with a named profile
 - Create an S3 bucket for the Terraform state file (*optional*)
 
