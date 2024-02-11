@@ -14,16 +14,12 @@ variable "aws_access_source" {
   sensitive   = true #hides the details from the deploy output and log files
 }
 
-variable "aws_key" {
-  description = "SSL key for accessing the ec2 instance"
-  type        = string
-  sensitive   = true #hides the details from the deploy output and log files
-}
-
 variable "PRIVATE_KEY" {
   default = "mykey"
+  sensitive = true
 }
 
 variable "PUBLIC_KEY" {
   default = "mykey.pub"
+  sensitive = true
 }
