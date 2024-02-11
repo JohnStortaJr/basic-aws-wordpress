@@ -122,7 +122,7 @@ ssh -i PRIVATE_KEY_FILE ubuntu@PUBLIC_DNS
 ssh -i "~/.ssh/awskey" ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com
 ```
 
-#Moving Within Subnet
+## Moving Within Subnet
 Once the environment is created, you may want to ssh from one instance to another. During the build
 process the public key was added to each instance. To make use of this key to access other instances
 we must copy the private key from your desktop to each instance that you wish to ssh from.
