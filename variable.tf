@@ -19,3 +19,11 @@ variable "aws_key" {
   type        = string
   sensitive   = true #hides the details from the deploy output and log files
 }
+
+variable "PRIVATE_KEY" {
+  default = "mykey"
+}
+
+variable "PUBLIC_KEY" {
+  default = "mykey.pub"
+}

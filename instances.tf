@@ -13,7 +13,7 @@
 resource "aws_instance" "basicec2labaz1" {
   # The key pair and security group must be created before the instances are built
   depends_on = [
-    aws_key_pair.basicec2lab-key01,
+    aws_key_pair.mykeypair,
     aws_security_group.basicec2lab-ssh-sg
   ]
 
@@ -22,7 +22,8 @@ resource "aws_instance" "basicec2labaz1" {
   instance_type          = "t2.micro"                                 # The size of the instance (t2.micro is free tier eligible)
   availability_zone      = "us-east-1a"                               # The Availability Zone where this instance should be built
   vpc_security_group_ids = [aws_security_group.basicec2lab-ssh-sg.id] # The security group that will allow SSH access to this instance from your IP
-  key_name               = "basicec2lab-key01"                        # The key pair that will allow SSH authentication to this instance
+  #key_name               = "basicec2lab-key01"                        # The key pair that will allow SSH authentication to this instance
+  key_name = aws_key_pair.mykeypair.key_name
 
   /*
         This is the AWS name for each instance created
@@ -40,15 +41,16 @@ resource "aws_instance" "basicec2labaz1" {
 */
 resource "aws_instance" "basicec2labaz2" {
   depends_on = [
-    aws_key_pair.basicec2lab-key01,
+    aws_key_pair.mykeypair,
     aws_security_group.basicec2lab-ssh-sg
   ]
 
-  count                  = 2
-  ami                    = "ami-0c7217cdde317cfec"
-  instance_type          = "t2.micro"
-  availability_zone      = "us-east-1b"
-  key_name               = "basicec2lab-key01"
+  count             = 2
+  ami               = "ami-0c7217cdde317cfec"
+  instance_type     = "t2.micro"
+  availability_zone = "us-east-1b"
+  #key_name               = "basicec2lab-key01"
+  key_name               = aws_key_pair.mykeypair.key_name
   vpc_security_group_ids = [aws_security_group.basicec2lab-ssh-sg.id]
 
   tags = {
