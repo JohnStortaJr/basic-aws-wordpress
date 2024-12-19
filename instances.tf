@@ -17,13 +17,13 @@ resource "aws_instance" "basicec2labaz1" {
     aws_security_group.basicec2lab-ssh-sg
   ]
 
-  count                  = 2                                          # How many instances should be created with this configuration
-  ami                    = "ami-0c7217cdde317cfec"                    # The AMI for this image (We are using Ubuntu22.04 LTS x86_64) 
-  instance_type          = "t2.micro"                                 # The size of the instance (t2.micro is free tier eligible)
-  availability_zone      = "us-east-1a"                               # The Availability Zone where this instance should be built
+  count                  = 2                       # How many instances should be created with this configuration
+  ami                    = "ami-0c7217cdde317cfec" # The AMI for this image (We are using Ubuntu22.04 LTS x86_64) 
+  instance_type          = "t2.micro"              # The size of the instance (t2.micro is free tier eligible)
+  availability_zone      = "us-east-1a"            # The Availability Zone where this instance should be built
   key_name               = aws_key_pair.basicec2lab-key01.key_name
   vpc_security_group_ids = [aws_security_group.basicec2lab-ssh-sg.id] # The security group that will allow SSH access to this instance from your IP
-   
+
   /*
         This is the AWS name for each instance created
         We are creating multiple instances as indicated by the count property
@@ -44,10 +44,10 @@ resource "aws_instance" "basicec2labaz2" {
     aws_security_group.basicec2lab-ssh-sg
   ]
 
-  count             = 2
-  ami               = "ami-0c7217cdde317cfec"
-  instance_type     = "t2.micro"
-  availability_zone = "us-east-1b"
+  count                  = 2
+  ami                    = "ami-0c7217cdde317cfec"
+  instance_type          = "t2.micro"
+  availability_zone      = "us-east-1b"
   key_name               = aws_key_pair.basicec2lab-key01.key_name
   vpc_security_group_ids = [aws_security_group.basicec2lab-ssh-sg.id]
 

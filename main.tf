@@ -1,11 +1,11 @@
 /*
   This block indicates that this configuration will use AWS. 
   It also specifies the region the resources will be deployed to (us-east-1)
-  and which IAM user should be used to create these resources (trainer01a)
+  and which configuration profile to use
 */
 provider "aws" {
-  region  = "us-east-1"  #modify this to the region your choice
-  profile = "trainer01a" #modify to an IAM user belonging to the AdministratorAccess policy
+  region  = "us-east-1"    #modify this to the region your choice
+  profile = "default" #modify to the configuration profile name if you used a named profile.
 }
 
 
@@ -16,13 +16,13 @@ provider "aws" {
   Refer to the s3bucket.md file for details on creating an s3 bucket from the AWS CLI
 */
 terraform {
-  backend "s3" {
-    bucket  = "js2024-basicec2lab-bucket"     #replace with the name of your s3 bucket (you will NOT be able to write to this bucket)
+  /*  backend "s3" {
+    bucket  = "js2024-basicec2lab-bucket"     #replace with the name of your s3 bucket (you will NOT be able to write to the example bucket)
     key     = "terraform.tfstate.basicec2lab" #this is the name for the state file object in your s3 bucket (anything you choose)
     region  = "us-east-1"
-    profile = "trainer01a"
+    profile = "default"
   }
-
+*/
   #If you plan to use a local state file, comment out the s3 block above
   #Local is the default backend so it is not necessary to explicitly declare it
   #backend "local" {}

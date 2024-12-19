@@ -41,7 +41,7 @@ attempting to implement this configuration.
 - [Install Terraform on your local machine](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - [Create an AWS Access Key and Secret Key](https://johnstortajr.com/2024/02/10/create-aws-access-key/) (*be sure to save these keys*)
-- [Configure the AWS CLI with a named profile](https://docs.aws.amazon.com/cli/latest/reference/configure/)
+- [Configure the AWS CLI with a named profile](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/index.html)
 - [Create an S3 bucket for the Terraform state file](s3bucket.md) (*optional*)
 
 ## secret.tfvars
@@ -89,12 +89,12 @@ Compare the desired configuration with the current active configuration and
 report back what changes will be made to bring the active configuration in line
 with what is desired. This command reports what will be done, but takes no action.
 ```
-terraform plan -var-file="secret.tfvars'
+terraform plan -var-file="secrets.tfvars"
 ```
 
 Execute the plan
 ```
-terraform apply -var-file="secret.tfvars"
+terraform apply -var-file="secrets.tfvars"
 ```
 
 The configuration will take several minutes for all the resources to be created and
