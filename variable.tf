@@ -12,22 +12,8 @@
   a netmask of /32. This will restrict access to your instances to just your location.
 */
 variable "aws_access_source" {
-  default     = "300.300.300.3/32"
+  default     = "172.72.249.14/32"
   description = "Single IP allowed to access the ec2 instance"
   type        = string
   sensitive   = true #hides the details from the deploy output and log files
-}
-
-/*
-  Replace the paths listed with paths to the actual public and private keys you will use 
-  when accessing the EC2 instances from your local machine
-*/
-variable "PRIVATE_KEY" {
-  default   = "/home/username/.ssh/rsa"
-  sensitive = true
-}
-
-variable "PUBLIC_KEY" {
-  default   = "/home/username/.ssh/rsa.pub"
-  sensitive = true
 }

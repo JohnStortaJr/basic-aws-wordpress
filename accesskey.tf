@@ -11,7 +11,7 @@
   The key_name provided within the block is the name used within AWS (they do not need to match)
 */
 
-resource "aws_key_pair" "basicec2lab-key01" {
-  key_name   = "basicec2lab-key01"
-  public_key = file(var.PUBLIC_KEY)
+resource "aws_key_pair" "basicwplab-key01" {
+  key_name   = "basicwplab-key01"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCVbq6uJuABtxMnmMey/C1jSerK0AnJ4cnVV28yrB46N4pGqnyyrPfp66SYqBL8gpsv7v7Gaq/AweI8lbFGpaqQQITd+ln0L0qwx6tN6BiILSMYSrEP46Z3GKakG//4lCRYM+vfnDY74FiBKz/5sMUK0tlPjIaPhTnoUMzRNjLiZMixwKWFPmbNh7b8inVS3PKceskfXmlj0302lomcAky4mtm7K97M6wu5FF7bgJQQFoAeqAjvyg3tVQLiylvFoTDEdZBPqcxhw56/klOJkIGPuwrjfl90ECqa0GldJdyOulsEwNiFsmPj5lzJsyQebZLYeKmkReTtaQykyW2Vh+Cp8D1lw98gwpexbE4DKRTobr5Tx8FBup0Y1w43FnKnXQIckpGtNGvaKy+fSW4HTpeY6hhrwx/aA+ZqHkAKk6Yz+6ewL5leJ4ZyulxpAOoMWoUl7nQlG2Pt7IDlBbHeyydLoJDE2YkTny1gZaWQa5gsmXTnEAgk6/kHwkFOc+m4urU= reach@johnstortajr.com"
 }
