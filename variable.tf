@@ -17,3 +17,11 @@ variable "local_source_ip" {
   type        = string
   sensitive   = true #hides the details from the deploy output and log files
 }
+
+/*
+  By default, I use the Ubuntu 22.04 LTS (x86_64) image
+*/
+variable "target_ami01" {
+  type = string
+  default = "ami-005fc0f236362e99f"
+}

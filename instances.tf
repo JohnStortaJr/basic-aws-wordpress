@@ -18,7 +18,7 @@ resource "aws_instance" "basicwplabaz1" {
   #]
 
   count                  = 2                       # How many instances should be created with this configuration
-  ami                    = "ami-005fc0f236362e99f" # The AMI for this image (We are using Ubuntu22.04 LTS x86_64) 
+  ami                    = "${var.target_ami01}"
   instance_type          = "t2.micro"              # The size of the instance (t2.micro is free tier eligible)
   availability_zone      = "us-east-1a"            # The Availability Zone where this instance should be built
   key_name               = "${aws_key_pair.basicwplab-key01.key_name}"
