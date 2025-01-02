@@ -2,26 +2,16 @@
 <img src="Basic%20EC2%20Lab%20Network%20Diagram.png" alt="Basic EC2 Lab Network Diagram" width="400">
 
 This repository contains the files necessary to build out
-a (very) basic EC2 lab environment using Terraform.
-
-This environment takes advantage of the default infrastructure
-you get with every AWS account and adds four internet-accessible
-EC2 instances that can be used for basic testing. It is meant to
-be your first step into the world of using AWS with Terraform.
-
-The default VPC, subnets, and internet gateway are automatically
-built when your AWS account is created. Each EC2 instance is built
-with public-facing IPv4 addresses so they can be accessed remotely
-from your personal IP (and ONLY your personal IP). 
+a (very) basic WordPress lab environment using Terraform.
 
 This lab is only for basic testing purposes and
 should NOT be used for any sensitive content.
 
-## Resources used…
-- VPC (*AWS default*)
-- Subnets (*AWS default*)
-- Internet Gateway (*AWS default*)
-- Route Tables (*AWS default*)
+## Resources included...
+- VPC
+- Subnets
+- Internet Gateway
+- Route Tables
 - Security Group
 - Key Pair
 - EC2
@@ -41,15 +31,15 @@ attempting to implement this configuration.
 - [Install Terraform on your local machine](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - [Create an AWS Access Key and Secret Key](https://johnstortajr.com/2024/02/10/create-aws-access-key/) (*be sure to save these keys*)
-- [Configure the AWS CLI with a named profile](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/index.html)
+- [Configure the AWS CLI](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/index.html)
 - [Create an S3 bucket for the Terraform state file](s3bucket.md) (*optional*)
 
-## secret.tfvars
+## secrets.tfvars
 There are a number of values needed during the deployment which 
 should not be shared or visible. These include things like access keys, 
 SSH keys, and IP addresses. 
-You will need a `secret.tfvars` file that contains your secrets.
-Refer to the [secret.md](secret.md) file for more information on this requirement.
+You will need a `secrets.tfvars` file that contains these sensitive values.
+Refer to the [secrets.md](secrets.md) file for more information on this requirement.
 
 ## tf files
 Terraform uses `.tf` files for the configuration. 
@@ -60,8 +50,9 @@ Refer to the comments within each `.tf` file for specific information about what
 It may be helpful to review the files in this order.
 - `main.tf` Terraform initialization
 - `variable.tf` Variable definitions 
+- `network.tf` VPC, Subnets, Internet Gateway, Route Table, Routes
 - `security-group.tf` Security group to allow access to the EC2 instances
-- `access-key.tf` SSH key for logging into the EC2 instances
+- `accesskey.tf` SSH key for logging into the EC2 instances
 - `instances.tf` EC2 configurations
 
 ## Deployment

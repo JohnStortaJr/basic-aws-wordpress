@@ -1,5 +1,5 @@
 /*
-  This file contains details about the variables used as part of this configuration.
+  This file contains details about the variables used in this configuration.
   The values for these variables are contained within the secrets.tfvars file but
   there are additional details specified here. 
   Note the sensitive property. Under normal circumstances, Terraform will display all
@@ -8,12 +8,18 @@
 */
 
 /*
-  For maximum security, set the default access IP to your IP provided by your ISP with 
-  a netmask of /32. This will restrict access to your instances to just your location.
+  For maximum security, set the local_source_ip to the IP provided by your ISP with 
+  a netmask of /32. For example... "234.158.113.98/32"
+  This will restrict access to the security group from only your location.
 */
-variable "aws_access_source" {
-  default     = "172.72.249.14/32"
+variable "local_source_ip" {
   description = "Single IP allowed to access the ec2 instance"
+  type        = string
+  sensitive   = true #hides the details from the deploy output and log files
+}
+
+variable "ssl_public_key" {
+  description = "Public key added to the authorized_keys file on each EC2 instance to allow for remote SSH access."
   type        = string
   sensitive   = true #hides the details from the deploy output and log files
 }

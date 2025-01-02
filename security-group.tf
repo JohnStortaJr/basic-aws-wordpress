@@ -22,7 +22,7 @@ resource "aws_security_group" "basic-aws-wordpress-sg1" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [var.aws_access_source] #this variable is populated in the secret.tfvars file with your IP address
+    cidr_blocks = [var.local_source_ip] #this variable is populated in the secret.tfvars file with your IP address
   }
 
   # This rule allows incoming HTTP connections from your IP address
@@ -31,7 +31,7 @@ resource "aws_security_group" "basic-aws-wordpress-sg1" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = [var.aws_access_source] #this variable is populated in the secret.tfvars file with your IP address
+    cidr_blocks = [var.local_source_ip] #this variable is populated in the secret.tfvars file with your IP address
   }
 
   # This rule allows incoming HTTPS connections from your IP address
@@ -40,7 +40,7 @@ resource "aws_security_group" "basic-aws-wordpress-sg1" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [var.aws_access_source] #this variable is populated in the secret.tfvars file with your IP address
+    cidr_blocks = [var.local_source_ip] #this variable is populated in the secret.tfvars file with your IP address
   }
 
   # This rule allows incoming SSH connections from other instances on all subnets within the default VPC
