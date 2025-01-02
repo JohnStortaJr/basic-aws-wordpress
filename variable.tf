@@ -17,9 +17,3 @@ variable "local_source_ip" {
   type        = string
   sensitive   = true #hides the details from the deploy output and log files
 }
-
-variable "ssl_public_key" {
-  description = "Public key added to the authorized_keys file on each EC2 instance to allow for remote SSH access."
-  type        = string
-  sensitive   = true #hides the details from the deploy output and log files
-}

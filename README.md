@@ -35,9 +35,8 @@ attempting to implement this configuration.
 - [Create an S3 bucket for the Terraform state file](s3bucket.md) (*optional*)
 
 ## secrets.tfvars
-There are a number of values needed during the deployment which 
-should not be shared or visible. These include things like access keys, 
-SSH keys, and IP addresses. 
+This file contains values that you would not want uploaded to the GitHub repository.
+This may include things like access keys, SSH keys, and local IP addresses. 
 You will need a `secrets.tfvars` file that contains these sensitive values.
 Refer to the [secrets.md](secrets.md) file for more information on this requirement.
 
@@ -56,8 +55,7 @@ It may be helpful to review the files in this order.
 - `instances.tf` EC2 configurations
 
 ## Deployment
-Once all the prerequisites are completed and you have setup your `secret.tfvars` file, 
-use the following commands to check and deploy the configuration.
+Once all the prerequisites are completed and you have setup your `secrets.tfvars` file, use the following commands to check and deploy the configuration.
 
 Initialize Terraform
 ```
@@ -96,18 +94,14 @@ AWS Management Console.
 Once the EC2 instances show that they are Running and have passed the checks, you
 can access them from your local system using OpenSSH. 
 
-The commands provided here are samples. Your DNS names will be different. You can get  
-the `PUBLIC_DNS` for each instance from the AWS Management Console.
+The commands provided here are samples. Your DNS names will be different. You can get the `PUBLIC_DNS` for each instance from the AWS Management Console.
 
 The default username for the AMI that we used is `ubuntu`.
+If you used an Amazon Linux AMI, the default user is likely ec2-user.
 
-If you used the default ssh key as your aws_key, then you should be able to use this command.
-```
-ssh ubuntu@PUBLIC_DNS
-ssh ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com
-```
-
-If you created a different ssh key, then you will need to specify it on the command line.
+You should be able to connect to the EC2 instances using this command.
+Note that the key you provide must be the private key from the key pair
+you used when creating the instance.
 ```
 ssh -i PRIVATE_KEY_FILE ubuntu@PUBLIC_DNS
 ssh -i "~/.ssh/awskey" ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com

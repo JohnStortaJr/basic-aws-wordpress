@@ -5,7 +5,7 @@
 */
 provider "aws" {
   region  = "us-east-1"    #modify this to the region your choice
-  profile = "default" #modify to the configuration profile name if you used a named profile.
+  profile = "default"      #modify to the configuration profile name if you used a named profile.
 }
 
 

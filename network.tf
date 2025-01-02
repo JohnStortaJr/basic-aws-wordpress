@@ -7,9 +7,12 @@
 
 /*
   This is a basic VPC that will use IPs in the 10.0.x.x range
+  Enabling DNS hostnames will provide Public IPv4 DNS names for 
+  any EC2 instances created within the VPC
 */
 resource "aws_vpc" "basic-aws-wordpress-vpc" {
   cidr_block = "10.0.0.0/16"
+  enable_dns_hostnames = "true"
 
   tags = {
     Name = "Basic Wordpress VPC"
