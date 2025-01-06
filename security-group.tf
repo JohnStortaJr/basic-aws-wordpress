@@ -64,3 +64,31 @@ resource "aws_security_group" "basic-aws-wordpress-sg1" {
     Name = "Basic WordPress Security Group"
   }
 }
+
+resource "aws_security_group" "basic-aws-wordpress-sg2" {
+  name        = "basicawswp-sshlocal-sg"
+  description = "Enable ssh access on port 22 to private subnet"
+  vpc_id = "${aws_vpc.basic-aws-wordpress-vpc.id}"
+
+
+  # This rule allows incoming SSH connections from other instances on all subnets within the default VPC
+  ingress {
+    description = "SSH Between Instances"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.0.0/24"] #This is the CIDR for the subnets automatically created within the default VPC
+  }
+
+  #This rule allows ALL outgoing traffic from the instance 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = -1
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "Basic WordPress Private Security Group"
+  }
+}

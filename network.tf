@@ -20,16 +20,36 @@ resource "aws_vpc" "basic-aws-wordpress-vpc" {
 }
 
 /*
-  Create a publicly accessible subnet
+  Create subnets
 */
-resource "aws_subnet" "basic-aws-wordpress-subnet-pub1" {
-  vpc_id = "${aws_vpc.basic-aws-wordpress-vpc.id}"
-  cidr_block = "10.0.1.0/24"
-  map_public_ip_on_launch = "true"
-  availability_zone = "us-east-1a"
+// Collect list of all availability zones in this region
+data "aws_availability_zones" "available" {}
 
+// Create one public subnet in the first 2 AZs
+// NOTE, this code works for us-east-1 where there are 6 AZs
+// In other regions, you will want to adjust the count accordingly
+resource "aws_subnet" "basic-aws-wordpress-subnet-pub1" {
+  count = "${length(data.aws_availability_zones.available.names)/3}"
+  vpc_id = "${aws_vpc.basic-aws-wordpress-vpc.id}"
+  cidr_block = "10.0.${10+count.index}.0/24"
+  map_public_ip_on_launch = "true"
+  availability_zone = "${data.aws_availability_zones.available.names[count.index]}"
+  
   tags = {
-    Name = "Basic WordPress Public Subnet 1"
+    Name = "Basic WordPress Public Subnet ${count.index}"
+  }
+}
+
+// Create one private subnet in the first 2 AZs
+resource "aws_subnet" "basic-aws-wordpress-subnet-pri1" {
+  count = "${length(data.aws_availability_zones.available.names)/3}"
+  vpc_id = "${aws_vpc.basic-aws-wordpress-vpc.id}"
+  cidr_block = "10.0.${20+count.index}.0/24"
+  map_public_ip_on_launch = "true"
+  availability_zone = "${data.aws_availability_zones.available.names[count.index]}"
+  
+  tags = {
+    Name = "Basic WordPress Private Subnet ${count.index}"
   }
 }
 
@@ -66,7 +86,9 @@ resource "aws_route_table" "basic-aws-wordpress-route-table" {
   }
 }
 
+# Associate the route table to the public subnets
 resource "aws_route_table_association" "basic-aws-wordpress-route-association" {
-  subnet_id = "${aws_subnet.basic-aws-wordpress-subnet-pub1.id}"
+  count = "${length(data.aws_availability_zones.available.names)}"
+  subnet_id = "${element(aws_subnet.basic-aws-wordpress-subnet-pub1.*.id, count.index)}"
   route_table_id = "${aws_route_table.basic-aws-wordpress-route-table.id}"
 }
