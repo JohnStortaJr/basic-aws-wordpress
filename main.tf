@@ -17,13 +17,13 @@ provider "aws" {
 */
 terraform {
   /*  backend "s3" {
-    bucket  = "js2024-basicec2lab-bucket"     #replace with the name of your s3 bucket (you will NOT be able to write to the example bucket)
-    key     = "terraform.tfstate.basicec2lab" #this is the name for the state file object in your s3 bucket (anything you choose)
+    bucket  = "s3bucketname"     #replace with the name of your s3 bucket (you will NOT be able to write to the example bucket)
+    key     = "terraform.tfstate.basicawswplab" #this is the name for the state file object in your s3 bucket (anything you choose)
     region  = "us-east-1"
     profile = "default"
   }
 */
   #If you plan to use a local state file, comment out the s3 block above
-  #Local is the default backend so it is not necessary to explicitly declare it
+  #Local is the default backend so it is not necessary to explicitly declare it but you can uncomment this line if desired
   #backend "local" {}
 }

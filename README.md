@@ -7,6 +7,7 @@ a (very) basic WordPress lab environment using Terraform.
 This lab is only for basic testing purposes and
 should NOT be used for any sensitive content.
 
+
 ## Resources included...
 - VPC
 - Subnets
@@ -16,6 +17,10 @@ should NOT be used for any sensitive content.
 - Key Pair
 - EC2
 
+The environment contains a single EC2 instance which is accessible from your IP
+using SSH (port 22) and HTTP (port 80). A script is included to install and
+configure WordPress. The script will execute when the EC2 instance is initially launched.
+
 ## Cost
 Be sure to check the current free tier limitations on these
 resources before building this environment.
@@ -23,8 +28,9 @@ resources before building this environment.
 ## Prerequisites
 This repository is focused on the deployment of infrastructure, 
 not the setup of your environment. 
-Ensure the following items are completed before 
-attempting to implement this configuration.
+
+
+Ensure the following items are completed before attempting to implement this configuration.
 - [Create an AWS account](https://johnstortajr.com/2023/10/08/create-aws-free-tier/)
 - [Create an IAM user for your AWS account with the `AdministratorAccess` policy](https://johnstortajr.com/2023/10/08/create-aws-iam-user/)
 - [Install Terraform on your local machine](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
@@ -42,7 +48,10 @@ Refer to the [secrets.md](secrets.md) file for more information on this requirem
 ## tf files
 Terraform uses `.tf` files for the configuration. 
 You can split your configuration up into as many, or as few, files as you desire. 
-Terraform will view all files together as though they were one big file. 
+Terraform will view all files together as though they were one big file. Terraform tries
+to infer dependencies based on the resources used and build the infrastructure in
+the appropriate order.
+
 Refer to the comments within each `.tf` file for specific information about what it contains.
 
 It may be helpful to review the files in this order.
@@ -89,33 +98,34 @@ The configuration will take several minutes for all the resources to be created 
 for the EC2 instances to complete their checks. You can monitor the status in the 
 AWS Management Console. 
 
+
 ## Access
 Once the EC2 instances show that they are Running and have passed the checks, you
 can access them from your local system using OpenSSH. 
 
-The commands provided here are samples. Your DNS names will be different. You can get the `PUBLIC_DNS` for each instance from the AWS Management Console.
+The command provided here is a sample. Your DNS name will be different. You can get the `PUBLIC_DNS` for the instance from the AWS Management Console.
 
 The default username for the AMI that we used is `ubuntu`.
-If you used an Amazon Linux AMI, the default user is likely ec2-user.
 
-You should be able to connect to the EC2 instances using this command.
+You should be able to connect to the EC2 instance using the command below.
 Note that the key you provide must be the private key from the key pair
 you used when creating the instance.
 ```
-ssh -i PRIVATE_KEY_FILE ubuntu@PUBLIC_DNS
-ssh -i "~/.ssh/awskey" ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com
+ssh -i "~/.ssh/myprivatesslkey" ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com
 ```
 
-## Moving Within Subnet
-Once the environment is created, you may want to ssh from one instance to another. During the build
-process the public key was added to each instance. To make use of this key to access other instances
-we must copy the private key from your desktop to each instance that you wish to ssh from.
+## Accessing WordPress
+The `WP_Setup.sh` script was sent to the instance at launch and executed. 
+Enter the DNS name for the instance in your browser. (use http, not https) If
+the script completed successfully, then you should see the WordPress setup
+screen where you can provide the initial details and visit the site.
 
-```
-scp -i mykey mykey ubuntu@ec2-00-11-22-333.compute-7.amazonaws.com:mykey
-```
+This lab is about creating the WordPress infrastructure, not configuring WordPress itself.
 
-Once the private key is on an instance, you can then ssh to any of the other instances.
+
+## Cleanup
+It is recommended that you only keep the environment as long as you need for 
+your purposes. When you are done with it, you should destroy it.
 ```
-ssh ubuntu@ip-111-22-3-444.ec2.internal
+terraform destroy -var-file="secrets.tfvars"
 ```

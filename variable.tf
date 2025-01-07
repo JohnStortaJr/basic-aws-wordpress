@@ -1,9 +1,10 @@
 /*
   This file contains details about the variables used in this configuration.
-  The values for these variables are contained within the secrets.tfvars file but
-  there are additional details specified here. 
+  The values for the local_source_ip and ssl_public_key_path variables are 
+  contained within the secrets.tfvars file but there are additional details specified here. 
+  
   Note the sensitive property. Under normal circumstances, Terraform will display all
-  the values for the configuration when you run plan and deploy steps. The sensitive
+  the values for the configuration when you run the plan and apply steps. The sensitive
   property on a variable tells it to hide its value.  
 */
 

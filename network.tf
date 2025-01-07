@@ -19,27 +19,37 @@ resource "aws_vpc" "basic-aws-wordpress-vpc" {
   }
 }
 
+
 /*
   Create subnets
 */
 // Collect list of all availability zones in this region
 data "aws_availability_zones" "available" {}
 
-// Create one public subnet in the first 2 AZs
+/*
+  Create one public subnet in the first AZ
+
+  If you would like to create a subnet in each of the availability zones in this region,
+  you can use this 
+
 // NOTE, this code works for us-east-1 where there are 6 AZs
 // In other regions, you will want to adjust the count accordingly
+*/
 resource "aws_subnet" "basic-aws-wordpress-subnet-pub1" {
-#  count = "${length(data.aws_availability_zones.available.names)/3}" //to additional subnets based on the number of AZs
-  count = "1"
+  //How many subnets should be created?
+  count = "1" //creates a single subnet in the first availability zone within this region
+  #count = "${length(data.aws_availability_zones.available.names)}" //creates a subnet in each availability zone within this region
+
   vpc_id = "${aws_vpc.basic-aws-wordpress-vpc.id}"
-  cidr_block = "10.0.${10+count.index}.0/24"
+  cidr_block = "10.0.${10+count.index}.0/24" //dynamically indicate the IP address for the subnet
   map_public_ip_on_launch = "true"
-  availability_zone = "${data.aws_availability_zones.available.names[count.index]}"
+  availability_zone = "${data.aws_availability_zones.available.names[count.index]}" //dynamically indicate which availability zone to place the subnet in
   
   tags = {
-    Name = "Basic WordPress Public Subnet ${count.index}"
+    Name = "Basic WordPress Public Subnet ${count.index}" //dynamically name the subnet
   }
 }
+
 
 /*
   Create an internet gateway and attach it to VPC in one step
@@ -51,6 +61,7 @@ resource "aws_internet_gateway" "basic-aws-wordpress-igateway" {
     Name = "Basic WordPress Internet Gateway"
   }
 }
+
 
 /*
   Create a route table and defines a route that directs
@@ -74,7 +85,7 @@ resource "aws_route_table" "basic-aws-wordpress-route-table" {
   }
 }
 
-# Associate the route table to the public subnets
+# Associate the route table to all public subnets created earlier
 resource "aws_route_table_association" "basic-aws-wordpress-route-association" {
   count = "${length(data.aws_availability_zones.available.names)}"
   subnet_id = "${element(aws_subnet.basic-aws-wordpress-subnet-pub1.*.id, count.index)}"
