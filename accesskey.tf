@@ -13,5 +13,5 @@
 */
 resource "aws_key_pair" "basicwplab-key01" {
   key_name   = "basicwplab-key01"
-  public_key = file("~/.ssh/smjs20241219a_512rsa.pub")
+  public_key = file("${var.ssl_public_key_path}")
 }

@@ -1,5 +1,5 @@
 # Basic EC2 Lab
-<img src="Basic%20EC2%20Lab%20Network%20Diagram.png" alt="Basic EC2 Lab Network Diagram" width="400">
+<img src="BasicWordPressLabDiagram.jpg" alt="Basic WordPress Lab Network Diagram" width="400">
 
 This repository contains the files necessary to build out
 a (very) basic WordPress lab environment using Terraform.
@@ -17,7 +17,6 @@ should NOT be used for any sensitive content.
 - EC2
 
 ## Cost
-All resources used in this environment are part of the AWS free tier. 
 Be sure to check the current free tier limitations on these
 resources before building this environment.
 

@@ -18,6 +18,12 @@ variable "local_source_ip" {
   sensitive   = true #hides the details from the deploy output and log files
 }
 
+variable "ssl_public_key_path" {
+  description = "Path to the public key used to access the EC2 instance via SSH"
+  type        = string
+  sensitive   = true
+}
+
 /*
   By default, I use the Ubuntu 22.04 LTS (x86_64) image
 */
